@@ -6,39 +6,35 @@
   <title>Sky's Craft Lab</title>
   <style>
     :root {
-      --primary-purple: #6a1b9a;
-      --secondary-purple: #9c27b0;
-      --accent-pink: #e91e63;
-      --light-bg: #f3e5f5;
+      --deep-purple: #4a148c;
+      --soft-purple: #7b1fa2;
+      --light-purple: #f3e5f5;
+      --accent-gold: #c5a059;
     }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: #333; }
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: var(--light-purple); color: #333; }
     
-    header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); color: white; text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-    header h1 { margin: 0; font-size: 2rem; letter-spacing: 1px; }
+    header { background: var(--deep-purple); color: white; text-align: center; padding: 25px 0; }
+    header h1 { margin: 0; font-size: 1.8rem; }
     
     nav { margin-top: 15px; }
-    nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; padding: 8px 16px; border: 1px solid white; border-radius: 20px; transition: 0.3s; }
-    nav a:hover { background: white; color: var(--primary-purple); }
+    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; border-bottom: 2px solid transparent; }
+    nav a:hover { border-bottom: 2px solid var(--accent-gold); }
 
-    main { max-width: 600px; margin: 0 auto; padding: 20px 15px 100px 15px; text-align: center; }
+    main { max-width: 600px; margin: 0 auto; padding: 20px; text-align: center; }
     
-    .content-box { background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-purple); }
-    h2 { color: var(--primary-purple); margin-top: 0; }
+    .brand-section { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 25px; }
+    .tagline { font-style: italic; color: var(--soft-purple); font-weight: bold; margin-top: 10px; }
     
-    .product-grid { display: grid; gap: 12px; margin: 20px 0; }
-    .product-item { background: #fdf5ff; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-pink); font-weight: bold; color: var(--primary-purple); text-align: left; }
+    .product-grid { display: grid; gap: 15px; }
+    .item { background: white; padding: 15px; border-radius: 8px; border-left: 5px solid var(--soft-purple); text-align: left; font-weight: 500; }
     
-    .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: var(--accent-pink); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; }
-    .btn:hover { background: var(--primary-purple); transform: scale(1.05); }
-
-    footer { background: #2d2d2d; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; font-size: 0.8rem; }
+    .cta-button { display: inline-block; margin-top: 25px; padding: 15px 30px; background: var(--deep-purple); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Sky's Craft Lab</h1>
-    <p>Custom Apparel, 3D Prints & Unique Creations</p>
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
@@ -47,23 +43,19 @@
   </header>
 
   <main>
-    <div class="content-box">
-      <h2>Welcome to the Lab!</h2>
-      <p>From personalized apparel to precision 3D printing, Sky's Craft Lab brings your ideas to life. Quality craftsmanship, made just for you.</p>
-      <a href="https://skyscraftlab.store" class="btn">Visit Our Main Store</a>
+    <div class="brand-section">
+      <h2>Handmade Creations</h2>
+      <p>Custom designs & 3D printed products crafted with creativity and care.</p>
+      <p class="tagline">✨ Custom Made. Creatively Crafted.✨</p>
     </div>
 
-    <div class="content-box">
-      <h2>What We Create</h2>
-      <div class="product-grid">
-        <div class="product-item">👕 Custom Apparel & Vinyl Design</div>
-        <div class="product-item">⚙️ High-Precision 3D Printing</div>
-        <div class="product-item">🎄 Custom Keepsakes & Ornaments</div>
-        <div class="product-item">📍 Personalized Coordinate Gifts</div>
-      </div>
+    <div class="product-grid">
+      <div class="item">🎁 Made-to-order pieces for gifts</div>
+      <div class="item">🏠 Home decor and accessories</div>
+      <div class="item">⚙️ Custom 3D printed products</div>
     </div>
+
+    <a href="https://skyscraftlab.store" class="cta-button">Visit Our Official Store</a>
   </main>
-
-  <footer><p>&copy; 2026 Sky's Craft Lab. All rights reserved.</p></footer>
 </body>
 </html>
