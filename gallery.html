@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght=700&display=swap" rel="stylesheet">
   <title>Gallery - Sky's Craft Lab</title>
   <style>
     :root {
@@ -10,6 +11,7 @@
       --secondary-purple: #9c27b0;
       --logo-dark-purple: #4a0072; 
       --light-bg: #f3e5f5;
+      --silver-metallic: linear-gradient(180deg, #d1d1d1 0%, #ffffff 50%, #b0b0b0 100%);
     }
 
     body { 
@@ -28,10 +30,12 @@
     }
     
     header h1 { 
-      margin: 0 0 15px 0; 
-      font-size: 3rem; 
-      color: white;
+      margin: 0 0 15px 0; font-size: 3rem; font-family: 'Dancing Script', cursive;
+      background: var(--silver-metallic); -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent;
     }
+    
+    .apos { margin-left: -5px; margin-right: -2px; }
 
     nav { margin-top: 5px; }
     nav a { 
@@ -152,7 +156,7 @@
 <body>
 
   <header>
-    <h1>Sky's Craft Lab</h1>
+    <h1>Sky<span class="apos">'</span>s Craft Lab</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html" class="active">Gallery</a>
@@ -245,35 +249,35 @@
       <h3>🚗 Vinyl Decals & Stickers</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/bigfoot%20decal.jpg" alt="Bigfoot silhouette vinyl decal applied on vehicle" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/bigfoot%20decal.jpg" alt="Bigfoot silhouette vinyl decal applied on vehicle" class="gallery-img">
           <div class="gallery-caption">Bigfoot Vehicle Decal</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/meme-vinyl-stickers.jpg" alt="Collection of novelty meme vinyl stickers" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/meme-vinyl-stickers.jpg" alt="Collection of novelty meme vinyl stickers" class="gallery-img">
           <div class="gallery-caption">Meme Vinyl Stickers</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/funny%20text%20decals.jpg" alt="Funny novelty text vinyl cutout collection" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/funny%20text%20decals.jpg" alt="Funny novelty text vinyl cutout collection" class="gallery-img">
           <div class="gallery-caption">Funny Text Decals</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/quote-vinyl-strips.jpg" alt="Inspirational and funny quote vinyl layout strips" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/quote-vinyl-strips.jpg" alt="Inspirational and funny quote vinyl layout strips" class="gallery-img">
           <div class="gallery-caption">Quote Vinyl Strips</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/dont-park-too-close-blue.jpg" alt="Don't park too close blue custom text decal on glass window" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/dont-park-too-close-blue.jpg" alt="Don't park too close blue custom text decal on glass window" class="gallery-img">
           <div class="gallery-caption">Don't Park Too Close (Blue)</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/dont-park-too-close-sheets.jpg" alt="Don't park too close custom decal transfer sheets" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/dont-park-too-close-sheets.jpg" alt="Don't park too close custom decal transfer sheets" class="gallery-img">
           <div class="gallery-caption">Don't Park Too Close (Sheets)</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/beautiful%20today%20framed%20decal.jpg" alt="Beautiful today blue script typography decal on display piece" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/beautiful%20today%20framed%20decal.jpg" alt="Beautiful today blue script typography decal on display piece" class="gallery-img">
           <div class="gallery-caption">Beautiful Today (Framed)</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/beautiful-today-transfer-tape.jpg" alt="Beautiful today cursive layout text view on transfer grid paper" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/beautiful-today-transfer-tape.jpg" alt="Beautiful today cursive layout text view on transfer grid paper" class="gallery-img">
           <div class="gallery-caption">Beautiful Today (Transfer Tape)</div>
         </div>
       </div>
@@ -284,15 +288,15 @@
       <h3>🐾 Personalized Pet Jars</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/cat%20treats%20jar.jpg" alt="Custom glass cat treats container with personalized lettering" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/cat%20treats%20jar.jpg" alt="Custom glass cat treats container with personalized lettering" class="gallery-img">
           <div class="gallery-caption">Cat Treats Jar (Close Up)</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/paws%20off%20my%20treats%20tall%20jar.jpg" alt="Tall personalized glass pet treat jar with paw prints layout" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/paws%20off%20my%20treats%20tall%20jar.jpg" alt="Tall personalized glass pet treat jar with paw prints layout" class="gallery-img">
           <div class="gallery-caption">Paws Off My Treats (Tall Jar)</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/custom%20pet%20jars%20set.jpg" alt="Matching custom glass dog and cat treat storage jars display" class="gallery-img">
+          <img src="images/vinyl%20decals%26stickers/custom%20pet%20jars%20set.jpg" alt="Matching custom glass dog and cat treat storage jars display" class="gallery-img">
           <div class="gallery-caption">Custom Pet Jars Set</div>
         </div>
       </div>
@@ -327,5 +331,4 @@
     }
   </script>
 </body>
-  </html>
-            
+</html>
