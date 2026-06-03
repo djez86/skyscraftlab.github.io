@@ -13,27 +13,33 @@
       --light-bg: #f3e5f5;
       --silver-metallic: linear-gradient(180deg, #d1d1d1 0%, #ffffff 50%, #b0b0b0 100%);
     }
+
+    /* Fixed background star pattern using clip-path shape */
     body { 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      margin: 0; padding: 0; background-color: var(--light-bg); color: #333;
-      /* Generates the stars directly in the background using a radial pattern */
-      background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
-      background-size: 40px 40px;
+      font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light-bg);
+      position: relative;
     }
     
+    body::before {
+      content: "";
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1;
+      background-image: radial-gradient(#d1d1d1 20%, transparent 20%);
+      background-size: 80px 80px;
+      opacity: 0.4;
+    }
+
     header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
     
     /* Title with tucked-in apostrophe */
     header h1 { 
       margin: 0 0 15px 0; font-size: 3rem; font-family: 'Dancing Script', cursive;
       background: var(--silver-metallic); -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; letter-spacing: -1px;
+      -webkit-text-fill-color: transparent;
     }
-    
-    nav a { 
-      color: white; font-weight: bold; text-decoration: none; margin: 0 10px; 
-      padding: 5px 15px; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; 
-    }
+    .apos { margin-left: -8px; margin-right: -4px; }
+
+    nav a { color: white; font-weight: bold; text-decoration: none; margin: 0 10px; padding: 5px 15px; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; }
 
     main { max-width: 600px; margin: 0 auto; padding: 20px 15px 100px 15px; text-align: center; }
     
@@ -55,7 +61,7 @@
 <body>
 
   <header>
-    <h1>Sky'sCraft Lab</h1>
+    <h1>Sky<span class="apos">'</span>s Craft Lab</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
