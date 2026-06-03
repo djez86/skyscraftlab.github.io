@@ -106,83 +106,59 @@
       margin: 35px 0 25px 0;
     }
 
-    /* --- LIGHTBOX POP-UP STYLES --- */
+    /* --- LIGHTBOX STYLES --- */
     .lightbox {
       display: none;
       position: fixed;
       z-index: 2000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
       justify-content: center;
       align-items: center;
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-    .lightbox.show {
-      display: flex;
-      opacity: 1;
-    }
+    .lightbox.show { display: flex; opacity: 1; }
+    
     .lightbox-img {
-      max-width: 85%;
-      max-height: 80%;
+      max-width: 80%;
+      max-height: 70%;
       border-radius: 10px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      transform: scale(0.9);
-      transition: transform 0.3s ease;
-    }
-    .lightbox.show .lightbox-img {
-      transform: scale(1);
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      color: white;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      user-select: none;
-      z-index: 2100;
     }
 
-    /* Lightbox Nav Arrows */
+    .lightbox-close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: white; font-size: 40px; cursor: pointer; z-index: 2100;
+    }
+
+    /* Refined Circular Arrows */
     .lightbox-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       color: white;
-      font-size: 45px;
-      font-weight: bold;
+      font-size: 24px;
       cursor: pointer;
-      user-select: none;
-      padding: 10px 15px;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 5px;
-      transition: background 0.2s, color 0.2s;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.3s ease;
       z-index: 2100;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .lightbox-arrow:hover {
-      background: rgba(255, 255, 255, 0.2);
-      color: var(--secondary-purple);
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-50%) scale(1.1);
     }
-    .lightbox-prev {
-      left: 15px;
-    }
-    .lightbox-next {
-      right: 15px;
-    }
-
-    @media (max-width: 500px) {
-      .lightbox-arrow {
-        font-size: 35px;
-        padding: 5px 10px;
-      }
-      .lightbox-prev { left: 5px; }
-      .lightbox-next { right: 5px; }
-    }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
 
     footer { 
       background: #2d2d2d; color: #d1d1d1; text-align: center; 
@@ -204,195 +180,98 @@
   <main>
     <div class="content-box">
       <h2>Our Creations</h2>
-      <p class="gallery-intro">A look inside the lab at some of our favorite custom projects and completed orders.</p>
+      <p class="gallery-intro">A look inside the lab at some of our favorite custom projects.</p>
       
       <h3>🎯 Custom Dart League Jerseys</h3>
       <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/DartJerseysHanging.jpg" alt="Custom Dart League Jerseys Hanging" class="gallery-img">
-          <div class="gallery-caption">Dart Jerseys (Hanging)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/DartJerseysFlatlay.jpg" alt="Custom Dart League Jerseys Flatlay" class="gallery-img">
-          <div class="gallery-caption">Dart Jerseys (Flat Lay)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/Dartjerseysgroup.jpg" alt="Custom Dart League Jerseys Group" class="gallery-img">
-          <div class="gallery-caption">Dart Jerseys (Team Names)</div>
-        </div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/DartJerseysHanging.jpg" alt="Dart Jerseys Hanging" class="gallery-img"><div class="gallery-caption">Dart Jerseys (Hanging)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/DartJerseysFlatlay.jpg" alt="Dart Jerseys Flat Lay" class="gallery-img"><div class="gallery-caption">Dart Jerseys (Flat Lay)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/Dartjerseysgroup.jpg" alt="Dart Jerseys Team Names" class="gallery-img"><div class="gallery-caption">Dart Jerseys (Team Names)</div></div>
       </div>
 
       <div class="section-divider"></div>
 
       <h3>🦸‍♂️ Character Fanware & Hoodies</h3>
       <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/DC%20Hoodie%20Hanging.jpg" alt="DC Comics Custom Hoodie Hanging" class="gallery-img">
-          <div class="gallery-caption">DC Hoodie (Hanging)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/DC%20Hoodie%20Flatlay.jpg" alt="DC Comics Custom Hoodie Flat Lay" class="gallery-img">
-          <div class="gallery-caption">DC Hoodie (Flat Lay)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/DC%20Hoodie%20Logo.jpg" alt="DC Comics Custom Hoodie Logo Close Up" class="gallery-img">
-          <div class="gallery-caption">DC Hoodie (Logo Detail)</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/Spiderman%20Shirt%20Front.jpg" alt="Spider-Man Custom Shirt Front" class="gallery-img">
-          <div class="gallery-caption">Spider-Man Shirt (Front)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/Spiderman%20Shirt%20Back.jpg" alt="Spider-Man Custom Shirt Back" class="gallery-img">
-          <div class="gallery-caption">Spider-Man Shirt (Back)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/Spiderman%20Shirt%20Logo.jpg" alt="Spider-Man Custom Shirt Web Logo Detail" class="gallery-img">
-          <div class="gallery-caption">Spider-Man Shirt (Logo)</div>
-        </div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/DC%20Hoodie%20Hanging.jpg" alt="DC Hoodie" class="gallery-img"><div class="gallery-caption">DC Hoodie (Hanging)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/DC%20Hoodie%20Flatlay.jpg" alt="DC Hoodie Flat" class="gallery-img"><div class="gallery-caption">DC Hoodie (Flat Lay)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/DC%20Hoodie%20Logo.jpg" alt="DC Hoodie Logo" class="gallery-img"><div class="gallery-caption">DC Hoodie (Logo)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/Spiderman%20Shirt%20Front.jpg" alt="Spiderman Front" class="gallery-img"><div class="gallery-caption">Spider-Man (Front)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/Spiderman%20Shirt%20Back.jpg" alt="Spiderman Back" class="gallery-img"><div class="gallery-caption">Spider-Man (Back)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/Spiderman%20Shirt%20Logo.jpg" alt="Spiderman Logo" class="gallery-img"><div class="gallery-caption">Spider-Man (Logo)</div></div>
       </div>
 
       <div class="section-divider"></div>
 
       <h3>🚑 Paramedic Custom Workwear</h3>
       <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/Paramedic%20Shirt%20Text.jpg" alt="Custom Paramedic Shirt with Text Detail" class="gallery-img">
-          <div class="gallery-caption">Paramedic Shirt (Text Print)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/Paramedic%20Shirt%20Flatlay.jpg" alt="Custom Navy Blue Paramedic Shirt Flat Lay" class="gallery-img">
-          <div class="gallery-caption">Paramedic Shirt (Flat Lay)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/Paramedic%20Shirt%20Navy.jpg" alt="Custom Navy Paramedic Apparel View" class="gallery-img">
-          <div class="gallery-caption">Paramedic Shirt (Navy Base)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/custom%20clothing/Paramedic%20Shirt%20Angle.jpg" alt="Custom Paramedic Shirt Angle Profile" class="gallery-img">
-          <div class="gallery-caption">Paramedic Shirt (Logo Print)</div>
-        </div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/Paramedic%20Shirt%20Text.jpg" alt="Paramedic Text" class="gallery-img"><div class="gallery-caption">Paramedic Shirt (Text)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/Paramedic%20Shirt%20Flatlay.jpg" alt="Paramedic Flat" class="gallery-img"><div class="gallery-caption">Paramedic Shirt (Flat)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/Paramedic%20Shirt%20Navy.jpg" alt="Paramedic Navy" class="gallery-img"><div class="gallery-caption">Paramedic Shirt (Navy)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/custom%20clothing/Paramedic%20Shirt%20Angle.jpg" alt="Paramedic Angle" class="gallery-img"><div class="gallery-caption">Paramedic Shirt (Logo)</div></div>
       </div>
 
       <div class="section-divider"></div>
 
       <h3>🚗 Vinyl Decals & Stickers</h3>
       <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/bigfoot%20decal.jpg" alt="Bigfoot silhouette vinyl decal applied on vehicle" class="gallery-img">
-          <div class="gallery-caption">Bigfoot Vehicle Decal</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/meme-vinyl-stickers.jpg" alt="Collection of novelty meme vinyl stickers" class="gallery-img">
-          <div class="gallery-caption">Meme Vinyl Stickers</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/funny%20text%20decals.jpg" alt="Funny novelty text vinyl cutout collection" class="gallery-img">
-          <div class="gallery-caption">Funny Text Decals</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/quote-vinyl-strips.jpg" alt="Inspirational and funny quote vinyl layout strips" class="gallery-img">
-          <div class="gallery-caption">Quote Vinyl Strips</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/dont-park-too-close-blue.jpg" alt="Don't park too close blue custom text decal on glass window" class="gallery-img">
-          <div class="gallery-caption">Don't Park Too Close (Blue)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/dont-park-too-close-sheets.jpg" alt="Don't park too close custom decal transfer sheets" class="gallery-img">
-          <div class="gallery-caption">Don't Park Too Close (Sheets)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/beautiful%20today%20framed%20decal.jpg" alt="Beautiful today blue script typography decal on display piece" class="gallery-img">
-          <div class="gallery-caption">Beautiful Today (Framed)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/beautiful-today-transfer-tape.jpg" alt="Beautiful today cursive layout text view on transfer grid paper" class="gallery-img">
-          <div class="gallery-caption">Beautiful Today (Transfer Tape)</div>
-        </div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/bigfoot%20decal.jpg" alt="Bigfoot Decal" class="gallery-img"><div class="gallery-caption">Bigfoot Decal</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/meme-vinyl-stickers.jpg" alt="Meme Stickers" class="gallery-img"><div class="gallery-caption">Meme Stickers</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/funny%20text%20decals.jpg" alt="Funny Text" class="gallery-img"><div class="gallery-caption">Funny Text Decals</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/quote-vinyl-strips.jpg" alt="Quotes" class="gallery-img"><div class="gallery-caption">Quote Strips</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/dont-park-too-close-blue.jpg" alt="Blue Decal" class="gallery-img"><div class="gallery-caption">Don't Park (Blue)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/dont-park-too-close-sheets.jpg" alt="Decal Sheet" class="gallery-img"><div class="gallery-caption">Don't Park (Sheets)</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/beautiful%20today%20framed%20decal.jpg" alt="Beautiful Framed" class="gallery-img"><div class="gallery-caption">Beautiful Today</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/beautiful-today-transfer-tape.jpg" alt="Transfer Tape" class="gallery-img"><div class="gallery-caption">Beautiful (Tape)</div></div>
       </div>
 
       <div class="section-divider"></div>
 
       <h3>🐾 Personalized Pet Jars</h3>
       <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/cat%20treats%20jar.jpg" alt="Custom glass cat treats container with personalized lettering" class="gallery-img">
-          <div class="gallery-caption">Cat Treats Jar (Close Up)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/paws%20off%20my%20treats%20tall%20jar.jpg" alt="Tall personalized glass pet treat jar with paw prints layout" class="gallery-img">
-          <div class="gallery-caption">Paws Off My Treats (Tall Jar)</div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl%20decals&stickers/custom-pet-jars-set.jpg" alt="Matching custom glass dog and cat treat storage jars display" class="gallery-img">
-          <div class="gallery-caption">Custom Pet Jars Set</div>
-        </div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/cat%20treats%20jar.jpg" alt="Cat Jar" class="gallery-img"><div class="gallery-caption">Cat Treats Jar</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/paws%20off%20my%20treats%20tall%20jar.jpg" alt="Tall Jar" class="gallery-img"><div class="gallery-caption">Paws Off Jar</div></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/vinyl%20decals&stickers/custom-pet-jars-set.jpg" alt="Jar Set" class="gallery-img"><div class="gallery-caption">Custom Pet Jars</div></div>
       </div>
     </div>
   </main>
 
   <div id="galleryLightbox" class="lightbox" onclick="handleLightboxClick(event)">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <span class="lightbox-arrow lightbox-prev" onclick="changeImage(-1)">&;</span>
+    <span class="lightbox-arrow lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
     <img id="lightboxImg" class="lightbox-img" src="" alt="Enlarged View">
-    <span class="lightbox-arrow lightbox-next" onclick="changeImage(1)">&;</span>
+    <span class="lightbox-arrow lightbox-next" onclick="changeImage(1)">&#10095;</span>
   </div>
 
   <footer><p>&copy; 2026 Sky's Craft Lab. All rights reserved.</p></footer>
 
   <script>
-    // Grab all images sequentially to loop through them easily
     const allGalleryImages = Array.from(document.querySelectorAll('.gallery-img'));
     let currentImgIndex = 0;
 
     function openLightbox(element) {
-      const targetImg = element.querySelector('.gallery-img');
-      // Sync our index tracking with the selected image
-      currentImgIndex = allGalleryImages.indexOf(targetImg);
-      
+      currentImgIndex = allGalleryImages.indexOf(element.querySelector('.gallery-img'));
       updateLightboxDisplay();
-      
-      const lightbox = document.getElementById('galleryLightbox');
-      lightbox.classList.add('show');
+      document.getElementById('galleryLightbox').classList.add('show');
     }
 
     function updateLightboxDisplay() {
       const lightboxImg = document.getElementById('lightboxImg');
-      const currentImg = allGalleryImages[currentImgIndex];
-      
-      lightboxImg.src = currentImg.src;
-      lightboxImg.alt = currentImg.alt;
+      lightboxImg.src = allGalleryImages[currentImgIndex].src;
     }
 
-    function changeImage(direction) {
-      // Calculate next/prev index, wrapping around cleanly if at the start or end
-      currentImgIndex = (currentImgIndex + direction + allGalleryImages.length) % allGalleryImages.length;
+    function changeImage(dir) {
+      currentImgIndex = (currentImgIndex + dir + allGalleryImages.length) % allGalleryImages.length;
       updateLightboxDisplay();
     }
 
     function closeLightbox() {
-      const lightbox = document.getElementById('galleryLightbox');
-      lightbox.classList.remove('show');
+      document.getElementById('galleryLightbox').classList.remove('show');
     }
 
-    // Prevents closing the lightbox accidentally when clicking on the image itself or buttons
     function handleLightboxClick(event) {
-      if (event.target.id === 'galleryLightbox') {
-        closeLightbox();
-      }
+      if (event.target.id === 'galleryLightbox') closeLightbox();
     }
-
-    // Optional keyboard accessibility for desktop setups
-    document.addEventListener('keydown', function(e) {
-      const lightbox = document.getElementById('galleryLightbox');
-      if (lightbox.classList.contains('show')) {
-        if (e.key === 'ArrowLeft') changeImage(-1);
-        if (e.key === 'ArrowRight') changeImage(1);
-        if (e.key === 'Escape') closeLightbox();
-      }
-    });
   </script>
 </body>
 </html>
