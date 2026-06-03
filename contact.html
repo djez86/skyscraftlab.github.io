@@ -43,16 +43,15 @@
   <main>
     <p style="text-align: center; font-style: italic;">Fill the form below and let's bring it to life inside the lab!</p>
     
-    <!-- No action attribute, using local script to trigger email -->
-    <form id="contactForm">
+    <form action="#" method="POST">
       <label>Your Name</label>
-      <input type="text" id="userName" required>
+      <input type="text" name="name" required>
 
       <label>Email Address</label>
-      <input type="email" id="userEmail" required>
+      <input type="email" name="email" required>
 
       <label>What are we creating?</label>
-      <select id="serviceType">
+      <select name="service">
         <option>Team Apparel & Custom Jerseys</option>
         <option>Custom Pet Jars & Vinyl Glassware</option>
         <option>Character Fanware & Hoodies</option>
@@ -61,24 +60,11 @@
       </select>
 
       <label>Project Details</label>
-      <textarea id="projectDetails" rows="5" required></textarea>
+      <textarea name="message" rows="5" required></textarea>
 
-      <button type="button" class="btn" onclick="sendEmail()">Send Inquiry to the Lab</button>
+      <button type="submit" class="btn">Send Inquiry to the Lab</button>
     </form>
   </main>
-
-  <script>
-    function sendEmail() {
-      const name = document.getElementById('userName').value;
-      const email = document.getElementById('userEmail').value;
-      const service = document.getElementById('serviceType').value;
-      const details = document.getElementById('projectDetails').value;
-      
-      const mailtoLink = `mailto:skyscraftlab@gmail.com?subject=New Inquiry: ${service}&body=Name: ${name}%0AEmail: ${email}%0A%0AProject Details:%0A${details}`;
-      
-      window.location.href = mailtoLink;
-    }
-  </script>
 
 </body>
 </html>
