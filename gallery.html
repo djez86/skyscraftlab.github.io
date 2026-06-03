@@ -126,7 +126,7 @@
       opacity: 1;
     }
     .lightbox-img {
-      max-width: 90%;
+      max-width: 85%;
       max-height: 80%;
       border-radius: 10px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
@@ -145,6 +145,43 @@
       font-weight: bold;
       cursor: pointer;
       user-select: none;
+      z-index: 2100;
+    }
+
+    /* Lightbox Nav Arrows */
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 45px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 15px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s;
+      z-index: 2100;
+    }
+    .lightbox-arrow:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--secondary-purple);
+    }
+    .lightbox-prev {
+      left: 15px;
+    }
+    .lightbox-next {
+      right: 15px;
+    }
+
+    @media (max-width: 500px) {
+      .lightbox-arrow {
+        font-size: 35px;
+        padding: 5px 10px;
+      }
+      .lightbox-prev { left: 5px; }
+      .lightbox-next { right: 5px; }
     }
 
     footer { 
@@ -296,30 +333,66 @@
     </div>
   </main>
 
-  <div id="galleryLightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close">&times;</span>
+  <div id="galleryLightbox" class="lightbox" onclick="handleLightboxClick(event)">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lightbox-arrow lightbox-prev" onclick="changeImage(-1)">&;</span>
     <img id="lightboxImg" class="lightbox-img" src="" alt="Enlarged View">
+    <span class="lightbox-arrow lightbox-next" onclick="changeImage(1)">&;</span>
   </div>
 
   <footer><p>&copy; 2026 Sky's Craft Lab. All rights reserved.</p></footer>
 
   <script>
+    // Grab all images sequentially to loop through them easily
+    const allGalleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+    let currentImgIndex = 0;
+
     function openLightbox(element) {
-      const targetSrc = element.querySelector('.gallery-img').src;
-      const targetAlt = element.querySelector('.gallery-img').alt;
+      const targetImg = element.querySelector('.gallery-img');
+      // Sync our index tracking with the selected image
+      currentImgIndex = allGalleryImages.indexOf(targetImg);
+      
+      updateLightboxDisplay();
+      
       const lightbox = document.getElementById('galleryLightbox');
-      const lightboxImg = document.getElementById('lightboxImg');
-      
-      lightboxImg.src = targetSrc;
-      lightboxImg.alt = targetAlt;
-      
       lightbox.classList.add('show');
+    }
+
+    function updateLightboxDisplay() {
+      const lightboxImg = document.getElementById('lightboxImg');
+      const currentImg = allGalleryImages[currentImgIndex];
+      
+      lightboxImg.src = currentImg.src;
+      lightboxImg.alt = currentImg.alt;
+    }
+
+    function changeImage(direction) {
+      // Calculate next/prev index, wrapping around cleanly if at the start or end
+      currentImgIndex = (currentImgIndex + direction + allGalleryImages.length) % allGalleryImages.length;
+      updateLightboxDisplay();
     }
 
     function closeLightbox() {
       const lightbox = document.getElementById('galleryLightbox');
       lightbox.classList.remove('show');
     }
+
+    // Prevents closing the lightbox accidentally when clicking on the image itself or buttons
+    function handleLightboxClick(event) {
+      if (event.target.id === 'galleryLightbox') {
+        closeLightbox();
+      }
+    }
+
+    // Optional keyboard accessibility for desktop setups
+    document.addEventListener('keydown', function(e) {
+      const lightbox = document.getElementById('galleryLightbox');
+      if (lightbox.classList.contains('show')) {
+        if (e.key === 'ArrowLeft') changeImage(-1);
+        if (e.key === 'ArrowRight') changeImage(1);
+        if (e.key === 'Escape') closeLightbox();
+      }
+    });
   </script>
 </body>
 </html>
