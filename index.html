@@ -14,24 +14,27 @@
       --silver-metallic: linear-gradient(180deg, #d1d1d1 0%, #ffffff 50%, #b0b0b0 100%);
     }
 
-    /* Fixed background star pattern using clip-path shape */
     body { 
       font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light-bg);
       position: relative;
     }
     
+    /* "Shit ton" of tiny stars pattern */
     body::before {
-      content: "";
+      content: "★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★";
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       z-index: -1;
-      background-image: radial-gradient(#d1d1d1 20%, transparent 20%);
-      background-size: 80px 80px;
-      opacity: 0.4;
+      color: #9c27b0; /* Matching your purple theme */
+      opacity: 0.15;
+      font-size: 10px;
+      line-height: 2;
+      letter-spacing: 20px;
+      padding: 10px;
+      pointer-events: none;
     }
 
     header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
     
-    /* Title with tucked-in apostrophe */
     header h1 { 
       margin: 0 0 15px 0; font-size: 3rem; font-family: 'Dancing Script', cursive;
       background: var(--silver-metallic); -webkit-background-clip: text; 
