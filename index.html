@@ -16,18 +16,18 @@
     body { 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
       margin: 0; padding: 0; background-color: var(--light-bg); color: #333;
-      /* Background star pattern */
-      background-image: url('images/star.png'); 
-      background-size: 50px 50px;
+      /* Generates the stars directly in the background using a radial pattern */
+      background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
+      background-size: 40px 40px;
     }
     
     header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
     
-    /* Fixed title: "Skys Craft Lab" (apostrophe tucked in) */
+    /* Title with tucked-in apostrophe */
     header h1 { 
       margin: 0 0 15px 0; font-size: 3rem; font-family: 'Dancing Script', cursive;
       background: var(--silver-metallic); -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; letter-spacing: -2px;
+      -webkit-text-fill-color: transparent; letter-spacing: -1px;
     }
     
     nav a { 
@@ -55,7 +55,7 @@
 <body>
 
   <header>
-    <h1>Sky'sCraft Lab</h1> <!-- Apostrophe adjusted here -->
+    <h1>Sky'sCraft Lab</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
