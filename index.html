@@ -9,7 +9,8 @@
     :root {
       --primary-purple: #6a1b9a;
       --secondary-purple: #9c27b0;
-      --accent-pink: #e91e63;
+      /* Changed from neon pink to a warm terracotta/burnt orange from her logo */
+      --accent-warm: #d47a55; 
       --light-bg: #f3e5f5;
       --silver-metallic: linear-gradient(180deg, #d1d1d1 0%, #ffffff 50%, #b0b0b0 100%);
     }
@@ -44,14 +45,12 @@
 
     main { max-width: 600px; margin: 0 auto; padding: 20px 15px 40px 15px; text-align: center; }
     
-    /* Optimized Logo Container for Mobile Framing */
     .logo-container {
       margin: 15px auto;
-      max-width: 260px; /* Slightly scaled down on mobile for ideal screen balance */
+      max-width: 260px; 
       width: 80%;
     }
     
-    /* Desktop/Larger Screen view adjustments */
     @media (min-width: 480px) {
       .logo-container { max-width: 320px; }
     }
@@ -71,23 +70,23 @@
     h2 { color: var(--primary-purple); margin-top: 0; }
     
     .bio-text { font-style: italic; font-weight: 500; color: #555; line-height: 1.6; }
-    .tagline { color: var(--accent-pink); font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
+    .tagline { color: var(--accent-warm); font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
 
     .product-grid { display: grid; gap: 12px; margin: 20px 0; }
     .product-item { 
       background: #fdf5ff; padding: 15px; border-radius: 8px; 
-      border-left: 4px solid var(--accent-pink); font-weight: bold; 
+      border-left: 4px solid var(--accent-warm); font-weight: bold; 
       color: var(--primary-purple); text-align: left; 
     }
     
     .btn { 
       display: inline-block; margin-top: 20px; padding: 12px 30px; 
-      background: var(--accent-pink); color: white; text-decoration: none; 
+      background: var(--accent-warm); color: white; text-decoration: none; 
       border-radius: 30px; font-weight: bold; transition: 0.3s; 
+      box-shadow: 0 4px 10px rgba(212, 122, 85, 0.3);
     }
-    .btn:hover { background: var(--primary-purple); transform: scale(1.05); }
+    .btn:hover { background: var(--primary-purple); transform: scale(1.05); box-shadow: 0 4px 10px rgba(106, 27, 154, 0.3); }
 
-    /* Changed from fixed to static block footer so it sits clean below content */
     footer { 
       background: #2d2d2d; color: #d1d1d1; text-align: center; 
       padding: 20px 15px; font-size: 0.8rem; width: 100%; box-sizing: border-box;
