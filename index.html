@@ -20,7 +20,7 @@
       background-color: var(--light-bg);
       /* Tiny, repeating star pattern */
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 2l1.2 3.6h3.8l-3 2.2 1.2 3.6-3-2.2-3 2.2 1.2-3.6-3-2.2h3.8L10 2z' fill='%239c27b0' fill-opacity='0.15'/%3E%3C/svg%3E");
-      background-size: 30px 30px; /* Adjust this to change how close they are */
+      background-size: 30px 30px; 
     }
     
     header { 
@@ -45,6 +45,20 @@
 
     main { max-width: 600px; margin: 0 auto; padding: 20px 15px 100px 15px; text-align: center; }
     
+    /* Logo Styling */
+    .logo-container {
+      margin: 20px auto;
+      max-width: 350px;
+      width: 90%;
+    }
+    .brand-logo {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
     .content-box { 
       background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; 
       box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--primary-purple); 
@@ -86,6 +100,11 @@
   </header>
 
   <main>
+    <!-- Logo display section directly below navigation -->
+    <div class="logo-container">
+      <img src="skyslogo.jpg" alt="Sky's Craft Lab Logo" class="brand-logo">
+    </div>
+
     <div class="content-box">
       <h2>Welcome to the Lab!</h2>
       <p class="bio-text">Handmade creations, custom designs & 3D printed products crafted with creativity and care. Made-to-order pieces for gifts, decor, accessories & more.</p>
