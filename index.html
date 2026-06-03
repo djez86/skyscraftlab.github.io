@@ -9,7 +9,6 @@
     :root {
       --primary-purple: #6a1b9a;
       --secondary-purple: #9c27b0;
-      /* Changed to a deep, rich plum purple to match the theme perfectly */
       --logo-dark-purple: #4a0072; 
       --light-bg: #f3e5f5;
       --silver-metallic: linear-gradient(180deg, #d1d1d1 0%, #ffffff 50%, #b0b0b0 100%);
@@ -75,9 +74,9 @@
     .product-grid { display: grid; gap: 12px; margin: 20px 0; }
     .product-item { 
       background: #fdf5ff; padding: 15px; border-radius: 8px; 
-      border-left: 4px solid var(--logo-dark-purple); font-weight: bold; 
-      color: var(--primary-purple); text-align: left; 
+      border-left: 4px solid var(--logo-dark-purple); color: #555; text-align: left; 
     }
+    .product-item strong { display: block; color: var(--primary-purple); margin-bottom: 3px; font-size: 1.05rem; }
     
     .btn { 
       display: inline-block; margin-top: 20px; padding: 12px 30px; 
@@ -119,10 +118,26 @@
     <div class="content-box">
       <h2>What We Create</h2>
       <div class="product-grid">
-        <div class="product-item">👕 Custom Apparel & Vinyl Design</div>
-        <div class="product-item">⚙️ High-Precision 3D Printing</div>
-        <div class="product-item">🎄 Custom Keepsakes & Ornaments</div>
-        <div class="product-item">📍 Personalized Coordinate Gifts</div>
+        <div class="product-item">
+          <strong>👕 Team Apparel & Custom Jerseys</strong>
+          Personalized local league jerseys, custom workwear, and special event clothing.
+        </div>
+        <div class="product-item">
+          <strong>🐾 Custom Pet Jars & Vinyl Glassware</strong>
+          Premium, precision-cut Cricut vinyl lettering and designs on glass storage jars.
+        </div>
+        <div class="product-item">
+          <strong>💥 Character Fanware & Custom Hoodies</strong>
+          Comic book, superhero, and fan-focused custom shirts and hoodies made to order.
+        </div>
+        <div class="product-item">
+          <strong>🏷️ Custom Decals & Vinyl Stickers</strong>
+          Eye-catching lettering and unique designs for vehicles, windows, mirrors, and walls.
+        </div>
+        <div class="product-item">
+          <strong>⚙️ Custom 3D Printing & Unique Gear</strong>
+          From personalized gadgets and custom cases to one-of-a-kind prototypes, bringing digital designs to life.
+        </div>
       </div>
     </div>
   </main>
