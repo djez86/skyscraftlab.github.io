@@ -10,15 +10,19 @@
       --secondary-purple: #9c27b0;
       --accent-pink: #e91e63;
       --light-bg: #f3e5f5;
+      /* Silver metallic gradient */
+      --silver-gradient: linear-gradient(135deg, #a1a1a1 0%, #ffffff 25%, #d1d1d1 50%, #ffffff 75%, #a1a1a1 100%);
     }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: #333; }
     
-    header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); color: white; text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-    header h1 { margin: 0; font-size: 2rem; letter-spacing: 1px; }
+    header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    
+    /* Applying silver text effect */
+    header h1 { margin: 0; font-size: 2rem; letter-spacing: 1px; background: var(--silver-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     
     nav { margin-top: 15px; }
-    nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; padding: 8px 16px; border: 1px solid white; border-radius: 20px; transition: 0.3s; }
-    nav a:hover { background: white; color: var(--primary-purple); }
+    nav a { text-decoration: none; margin: 0 12px; font-weight: bold; padding: 8px 16px; border: 1px solid #d1d1d1; border-radius: 20px; transition: 0.3s; background: var(--silver-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    nav a:hover { background: white; -webkit-text-fill-color: var(--primary-purple); border-color: white; }
 
     main { max-width: 600px; margin: 0 auto; padding: 20px 15px 100px 15px; text-align: center; }
     
@@ -34,7 +38,7 @@
     .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: var(--accent-pink); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; }
     .btn:hover { background: var(--primary-purple); transform: scale(1.05); }
 
-    footer { background: #2d2d2d; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; font-size: 0.8rem; }
+    footer { background: #2d2d2d; color: #d1d1d1; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; font-size: 0.8rem; }
   </style>
 </head>
 <body>
