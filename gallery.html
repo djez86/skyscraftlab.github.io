@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <title>Gallery - Sky's Craft Lab</title>
+  <style>
+    :root {
+      --primary-purple: #6a1b9a;
+      --secondary-purple: #9c27b0;
+      --logo-dark-purple: #4a0072; 
+      --light-bg: #f3e5f5;
+      --silver-metallic: linear-gradient(180deg, #d1d1d1 0%, #ffffff 50%, #b0b0b0 100%);
+    }
+
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin: 0; padding: 0; 
+      background-color: var(--light-bg);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 2l1.2 3.6h3.8l-3 2.2 1.2 3.6-3-2.2-3 2.2 1.2-3.6-3-2.2h3.8L10 2z' fill='%239c27b0' fill-opacity='0.15'/%3E%3C/svg%3E");
+      background-size: 30px 30px; 
+      background-position: center top;
+    }
+    
+    header { 
+      background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); 
+      text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+    }
+    
+    header h1 { 
+      margin: 0 0 15px 0; font-size: 3rem; font-family: 'Dancing Script', cursive;
+      background: var(--silver-metallic); -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .apos { margin-left: -5px; margin-right: -2px; }
+
+    nav { margin-top: 5px; }
+    nav a { 
+      color: white; font-weight: bold; text-decoration: none; margin: 0 10px; 
+      padding: 5px 15px; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; 
+    }
+    /* Simple active styling for the current page */
+    nav a.active {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: white;
+    }
+
+    main { max-width: 600px; margin: 0 auto; padding: 20px 15px 40px 15px; text-align: center; }
+    
+    .content-box { 
+      background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; 
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--primary-purple); 
+    }
+    h2 { color: var(--primary-purple); margin-top: 0; margin-bottom: 10px; }
+    
+    .gallery-intro { font-style: italic; font-weight: 500; color: #555; margin-bottom: 25px; }
+
+    /* Responsive 2-column grid for showcase images */
+    .gallery-grid { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 15px; 
+      margin: 15px 0;
+    }
+    
+    @media (max-width: 400px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+
+    .gallery-item { 
+      background: #fdf5ff; 
+      border-radius: 10px; 
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border: 1px solid #f3e5f5;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(106, 27, 154, 0.15);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: #eee; /* Fallback placeholder color */
+    }
+
+    .gallery-caption {
+      padding: 10px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: var(--logo-dark-purple);
+      background: white;
+      border-top: 1px solid #f3e5f5;
+    }
+
+    footer { 
+      background: #2d2d2d; color: #d1d1d1; text-align: center; 
+      padding: 20px 15px; font-size: 0.8rem; width: 100%; box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sky<span class="apos">'</span>s Craft Lab</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="content-box">
+      <h2>Our Creations</h2>
+      <p class="gallery-intro">A look inside the lab at some of our favorite custom projects and completed orders.</p>
+      
+      <div class="gallery-grid">
+        <!-- Item 1: Team Jerseys -->
+        <div class="gallery-item">
+          <img src="images/dart-jerseys.jpg" alt="Custom Dart League Jerseys" class="gallery-img">
+          <div class="gallery-caption">Custom Dart League Jerseys</div>
+        </div>
+
+        <!-- Item 2: Pet Jars -->
+        <div class="gallery-item">
+          <img src="images/pet-jars.jpg" alt="Custom Pet Treat Jars" class="gallery-img">
+          <div class="gallery-caption">Personalized Pet Jars</div>
+        </div>
+
+        <!-- Item 3: Character Hoodies -->
+        <div class="gallery-item">
+          <img src="images/spiderman-apparel.jpg" alt="Spider-Man Custom Apparel" class="gallery-img">
+          <div class="gallery-caption">Character Fanware</div>
+        </div>
+
+        <!-- Item 4: Custom Decals -->
+        <div class="gallery-item">
+          <img src="images/car-decals.jpg" alt="Vinyl Car Decals" class="gallery-img">
+          <div class="gallery-caption">Vinyl Decals & Stickers</div>
+        </div>
+
+        <!-- Item 5: 3D Printing -->
+        <div class="gallery-item">
+          <img src="images/3d-print.jpg" alt="Custom 3D Printing Project" class="gallery-img">
+          <div class="gallery-caption">Custom 3D Printed Gear</div>
+        </div>
+
+        <!-- Item 6: Workwear/Special Events -->
+        <div class="gallery-item">
+          <img src="images/paramedic-apparel.jpg" alt="Custom Paramedic Apparel" class="gallery-img">
+          <div class="gallery-caption">Custom Workwear</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer><p>&copy; 2026 Sky's Craft Lab. All rights reserved.</p></footer>
+</body>
+</html>
