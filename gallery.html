@@ -47,11 +47,11 @@
       border-color: white;
     }
 
-    /* Added a top margin to stop the header from bleeding/clashing into content */
-    main { max-width: 600px; margin: 20px auto 0 auto; padding: 20px 15px 40px 15px; text-align: center; }
+    main { max-width: 600px; margin: 0 auto; padding: 0 15px 40px 15px; text-align: center; }
     
+    /* Added margin-top here to push the white box cleanly down past the sticky header */
     .content-box { 
-      background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; 
+      background: white; border-radius: 15px; padding: 30px; margin-top: 25px; margin-bottom: 25px; 
       box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--primary-purple); 
     }
     h2 { color: var(--primary-purple); margin-top: 0; margin-bottom: 10px; }
@@ -170,6 +170,7 @@
       <h2>Our Creations</h2>
       <p class="gallery-intro">A look inside the lab at some of our favorite custom projects and completed orders.</p>
       
+      <!-- Custom Dart League Jerseys Section -->
       <h3>🎯 Custom Dart League Jerseys</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="openLightbox(this)">
@@ -188,8 +189,10 @@
 
       <div class="section-divider"></div>
 
+      <!-- Character Fanware & Hoodies Section -->
       <h3>🦸‍♂️ Character Fanware & Hoodies</h3>
       <div class="gallery-grid">
+        <!-- DC Comics Originals Hoodies -->
         <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/custom clothing/DC Hoodie Hanging.jpg" alt="DC Comics Custom Hoodie Hanging" class="gallery-img">
           <div class="gallery-caption">DC Hoodie (Hanging)</div>
@@ -203,6 +206,7 @@
           <div class="gallery-caption">DC Hoodie (Logo Detail)</div>
         </div>
 
+        <!-- Spider-Man Custom Shirts -->
         <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/custom clothing/Spiderman Shirt Front.jpg" alt="Spider-Man Custom Shirt Front" class="gallery-img">
           <div class="gallery-caption">Spider-Man Shirt (Front)</div>
@@ -219,6 +223,7 @@
 
       <div class="section-divider"></div>
 
+      <!-- Paramedic Custom Workwear Section -->
       <h3>🚑 Paramedic Custom Workwear</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="openLightbox(this)">
@@ -241,6 +246,7 @@
 
       <div class="section-divider"></div>
 
+      <!-- Vinyl Decals & Stickers Section -->
       <h3>🚗 Vinyl Decals & Stickers</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="openLightbox(this)">
@@ -279,6 +285,7 @@
 
       <div class="section-divider"></div>
 
+      <!-- Personalized Pet Jars Section -->
       <h3>🐾 Personalized Pet Jars</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="openLightbox(this)">
@@ -290,13 +297,15 @@
           <div class="gallery-caption">Paws Off My Treats (Tall Jar)</div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="images/vinyl decals&stickers/Custom pet jars set.jpg" alt="Matching custom glass dog and cat treat storage jars display" class="gallery-img">
+          <!-- FIXED: Strictly matched the exact lower-case file name layout from your repository -->
+          <img src="images/vinyl decals&stickers/custom pet jars set.jpg" alt="Matching custom glass dog and cat treat storage jars display" class="gallery-img">
           <div class="gallery-caption">Custom Pet Jars Set</div>
         </div>
       </div>
     </div>
   </main>
 
+  <!-- Pop-Up Overlay Structure -->
   <div id="galleryLightbox" class="lightbox" onclick="closeLightbox()">
     <span class="lightbox-close">&times;</span>
     <img id="lightboxImg" class="lightbox-img" src="" alt="Enlarged View">
@@ -304,6 +313,7 @@
 
   <footer><p>&copy; 2026 Sky's Craft Lab. All rights reserved.</p></footer>
 
+  <!-- Lightbox Controller Script -->
   <script>
     function openLightbox(element) {
       const targetSrc = element.querySelector('.gallery-img').src;
