@@ -10,40 +10,33 @@
       --secondary-purple: #9c27b0;
       --accent-pink: #e91e63;
       --light-bg: #f3e5f5;
-      /* Refined silver metallic gradient */
       --silver-metallic: linear-gradient(180deg, #d1d1d1 0%, #ffffff 50%, #b0b0b0 100%);
+      --silver-border: 1px solid #c0c0c0;
     }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: #333; }
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: #333; }
     
-    header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-    
-    /* Silver text effect for Header and Nav */
-    header h1, nav a { 
-      background: var(--silver-metallic); 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-      font-weight: bold; 
-    }
+    header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); text-align: center; padding: 25px 0; }
+    header h1, nav a { background: var(--silver-metallic); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; }
     
     nav { margin-top: 15px; }
-    nav a { text-decoration: none; margin: 0 12px; padding: 8px 16px; border: 1px solid #b0b0b0; border-radius: 20px; transition: 0.3s; }
-    nav a:hover { border-color: #ffffff; }
+    nav a { text-decoration: none; margin: 0 12px; padding: 8px 16px; border: var(--silver-border); border-radius: 20px; }
 
-    main { max-width: 600px; margin: 0 auto; padding: 20px 15px 100px 15px; text-align: center; }
+    main { max-width: 600px; margin: 0 auto; padding: 20px; text-align: center; }
     
-    .content-box { background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-purple); }
+    /* ADDED SILVER BORDER TO BOXES */
+    .content-box { background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; border: var(--silver-border); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    
     h2 { color: var(--primary-purple); margin-top: 0; }
     
-    .bio-text { font-style: italic; font-weight: 500; color: #555; line-height: 1.6; }
-    .tagline { color: var(--accent-pink); font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
+    /* ADDED SILVER DIVIDER EFFECT */
+    .divider { height: 2px; background: var(--silver-metallic); margin: 20px 0; border: none; }
 
     .product-grid { display: grid; gap: 12px; margin: 20px 0; }
     .product-item { background: #fdf5ff; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-pink); font-weight: bold; color: var(--primary-purple); text-align: left; }
     
-    .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: var(--accent-pink); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; }
-    .btn:hover { background: var(--primary-purple); transform: scale(1.05); }
+    .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: var(--accent-pink); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; }
 
-    footer { background: #2d2d2d; color: #d1d1d1; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; font-size: 0.8rem; }
+    footer { background: #2d2d2d; color: #d1d1d1; text-align: center; padding: 15px; font-size: 0.8rem; }
   </style>
 </head>
 <body>
@@ -60,18 +53,17 @@
   <main>
     <div class="content-box">
       <h2>Welcome to the Lab!</h2>
-      <p class="bio-text">Handmade creations, custom designs & 3D printed products crafted with creativity and care. Made-to-order pieces for gifts, decor, accessories & more.</p>
-      <p class="tagline">✨Custom Made. Creatively Crafted.✨</p>
+      <p>Handmade creations, custom designs & 3D printed products crafted with creativity and care.</p>
       <a href="https://skyscraftlab.store" class="btn">Visit Our Main Store</a>
     </div>
+
+    <hr class="divider"> <!-- Silver divider added here -->
 
     <div class="content-box">
       <h2>What We Create</h2>
       <div class="product-grid">
         <div class="product-item">👕 Custom Apparel & Vinyl Design</div>
         <div class="product-item">⚙️ High-Precision 3D Printing</div>
-        <div class="product-item">🎄 Custom Keepsakes & Ornaments</div>
-        <div class="product-item">📍 Personalized Coordinate Gifts</div>
       </div>
     </div>
   </main>
