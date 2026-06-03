@@ -3,38 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DJ's Custom Prints</title>
-  <link rel="icon" href="images/favicon-16x16.png" type="image/png">
+  <title>Sky's Craft Lab</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #222222; }
-    header { background-color: #003366; color: white; text-align: center; padding: 20px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
-    header h1 { margin: 0; font-size: 1.7rem; }
-    nav { margin-top: 15px; }
-    nav a { 
-      background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      color: #002142; text-decoration: none; margin: 0 8px; font-weight: bold; font-size: 0.95rem; padding: 6px 16px; border-radius: 20px; display: inline-block; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    :root {
+      --primary-purple: #6a1b9a;
+      --secondary-purple: #9c27b0;
+      --accent-pink: #e91e63;
+      --light-bg: #f3e5f5;
     }
-    main { max-width: 600px; margin: 0 auto; padding: 20px 15px 140px 15px; text-align: center; }
-    .hero-branding { margin: 20px 0 30px 0; }
-    .hero-logo { width: 85%; max-width: 320px; display: block; margin: 0 auto; mix-blend-mode: multiply; }
-    .content-box { background-color: #ffffff; border-radius: 12px; padding: 25px 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
-    .content-box h2 { color: #003366; margin-top: 0; font-size: 1.35rem; position: relative; display: inline-block; padding-bottom: 8px; margin-bottom: 18px; }
-    .content-box h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%); }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: #333; }
     
-    /* NEW PRODUCT GRID STYLING */
-    .product-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 20px 0; }
-    .product-item { background: #f9fbfd; padding: 15px; border-radius: 8px; border: 1px solid #eef2f5; font-weight: bold; color: #003366; text-align: left; }
+    header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); color: white; text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    header h1 { margin: 0; font-size: 2rem; letter-spacing: 1px; }
     
-    .button { display: inline-block; margin-top: 15px; padding: 12px 40px; background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%); color: #002142; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.05rem; }
-    .fb-button { display: inline-block; margin-top: 15px; padding: 12px 35px; background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%); color: #002142; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.05rem; }
-    .sky-logo-badge { display: block; margin: 0 auto 15px auto; width: 100%; max-width: 150px; mix-blend-mode: multiply; }
-    footer { background-color: #003366; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; }
+    nav { margin-top: 15px; }
+    nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; padding: 8px 16px; border: 1px solid white; border-radius: 20px; transition: 0.3s; }
+    nav a:hover { background: white; color: var(--primary-purple); }
+
+    main { max-width: 600px; margin: 0 auto; padding: 20px 15px 100px 15px; text-align: center; }
+    
+    .content-box { background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-purple); }
+    h2 { color: var(--primary-purple); margin-top: 0; }
+    
+    .product-grid { display: grid; gap: 12px; margin: 20px 0; }
+    .product-item { background: #fdf5ff; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-pink); font-weight: bold; color: var(--primary-purple); text-align: left; }
+    
+    .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: var(--accent-pink); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; }
+    .btn:hover { background: var(--primary-purple); transform: scale(1.05); }
+
+    footer { background: #2d2d2d; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; font-size: 0.8rem; }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>DJ's Custom Prints</h1>
-    <p style="margin: 5px 0 0 0; font-size: 0.95rem; padding: 0 10px;">Your one-stop shop for personalized apparel & 3D prints!</p>
+    <h1>Sky's Craft Lab</h1>
+    <p>Custom Apparel, 3D Prints & Unique Creations</p>
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
@@ -43,35 +47,23 @@
   </header>
 
   <main>
-    <div class="hero-branding"><img src="images/website%20logo.png" alt="Logo" class="hero-logo"></div>
-    
     <div class="content-box">
-      <h2>ABOUT THE MAKER</h2>
-      <p>Welcome to DJ's Custom Prints. Started in Roddickton and now operating out of Flatrock, we specialize in high quality 3D printing and custom gear with Cricut.</p>
-      <a href="gallery.html" class="button">Explore Our Gallery</a>
+      <h2>Welcome to the Lab!</h2>
+      <p>From personalized apparel to precision 3D printing, Sky's Craft Lab brings your ideas to life. Quality craftsmanship, made just for you.</p>
+      <a href="https://skyscraftlab.store" class="btn">Visit Our Main Store</a>
     </div>
 
     <div class="content-box">
-      <h2>OUR PRODUCTS</h2>
+      <h2>What We Create</h2>
       <div class="product-grid">
-        <div class="product-item">👕 Custom Apparel (T-Shirts, Sweaters)</div>
-        <div class="product-item">⚙️ High-Quality 3D Prints</div>
-        <div class="product-item">🎄 Personalized Ornaments</div>
-        <div class="product-item">📍 Custom Coordinates Designs</div>
-        <div class="product-item">🎁 Event-Specific Gifts</div>
+        <div class="product-item">👕 Custom Apparel & Vinyl Design</div>
+        <div class="product-item">⚙️ High-Precision 3D Printing</div>
+        <div class="product-item">🎄 Custom Keepsakes & Ornaments</div>
+        <div class="product-item">📍 Personalized Coordinate Gifts</div>
       </div>
-      <a href="contact.html" class="button">Get in Touch</a>
-    </div>
-
-    <div class="content-box">
-      <h2>OUR PARTNER BUSINESS</h2>
-      <img src="images/Sky's logo.png" alt="Sky's Craft Lab Logo" class="sky-logo-badge">
-      <h2>SKY'S CRAFT LAB</h2>
-      <p>Looking for high-quality custom apparel, 3D prints, or personalized vinyl craft designs? Check out our partner business!</p>
-      <a href="https://www.facebook.com/share/1D29E7Fj2v/" target="_blank" class="fb-button">Visit Her Facebook Page</a>
     </div>
   </main>
 
-  <footer><p>&copy; 2024–2026 DJ's Custom Prints. All rights reserved.</p></footer>
+  <footer><p>&copy; 2026 Sky's Craft Lab. All rights reserved.</p></footer>
 </body>
 </html>
