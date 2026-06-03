@@ -76,6 +76,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       border: 1px solid #f3e5f5;
       transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer; /* Changes mouse to pointer to signal it's clickable */
     }
     .gallery-item:hover {
       transform: translateY(-5px);
@@ -105,6 +106,47 @@
       margin: 35px 0 25px 0;
     }
 
+    /* --- LIGHTBOX POP-UP STYLES --- */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox.show {
+      display: flex;
+      opacity: 1;
+    }
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+    .lightbox.show .lightbox-img {
+      transform: scale(1);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+
     footer { 
       background: #2d2d2d; color: #d1d1d1; text-align: center; 
       padding: 20px 15px; font-size: 0.8rem; width: 100%; box-sizing: border-box;
@@ -130,20 +172,19 @@
       <!-- Custom Clothing & Sportswear Section -->
       <h3>👕 Custom Clothing & Sportswear</h3>
       <div class="gallery-grid">
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/custom clothing/DartJerseysHanging.jpg" alt="Custom Dart League Jerseys Hanging" class="gallery-img">
           <div class="gallery-caption">Dart Jerseys (Hanging)</div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/custom clothing/DartJerseysFlatlay.jpg" alt="Custom Dart League Jerseys Flatlay" class="gallery-img">
           <div class="gallery-caption">Dart Jerseys (Flat Lay)</div>
         </div>
-        <div class="gallery-item">
-          <!-- Fixed capitalization to match GitHub file directly -->
+        <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/custom clothing/Dartjerseysgroup.jpg" alt="Custom Dart League Jerseys Group" class="gallery-img">
           <div class="gallery-caption">Dart Jerseys (Team Names)</div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/custom clothing/spiderman-apparel.jpg" alt="Spider-Man Custom Apparel" class="gallery-img">
           <div class="gallery-caption">Character Fanware & Hoodies</div>
         </div>
@@ -154,19 +195,19 @@
       <!-- Lab Creations Section -->
       <h3>✨ More Lab Creations</h3>
       <div class="gallery-grid">
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/pet-jars.jpg" alt="Custom Pet Treat Jars" class="gallery-img">
           <div class="gallery-caption">Personalized Pet Jars</div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/car-decals.jpg" alt="Vinyl Car Decals" class="gallery-img">
           <div class="gallery-caption">Vinyl Decals & Stickers</div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/3d-print.jpg" alt="Custom 3D Printing Project" class="gallery-img">
           <div class="gallery-caption">Custom 3D Printed Gear</div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox(this)">
           <img src="images/accessories.jpg" alt="Custom Personalized Accessories" class="gallery-img">
           <div class="gallery-caption">Custom Keepsakes</div>
         </div>
@@ -174,6 +215,32 @@
     </div>
   </main>
 
+  <!-- Pop-Up Overlay Structure -->
+  <div id="galleryLightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="Enlarged View">
+  </div>
+
   <footer><p>&copy; 2026 Sky's Craft Lab. All rights reserved.</p></footer>
+
+  <!-- Lightbox Controller Script -->
+  <script>
+    function openLightbox(element) {
+      const targetSrc = element.querySelector('.gallery-img').src;
+      const targetAlt = element.querySelector('.gallery-img').alt;
+      const lightbox = document.getElementById('galleryLightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      
+      lightboxImg.src = targetSrc;
+      lightboxImg.alt = targetAlt;
+      
+      lightbox.classList.add('show');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('galleryLightbox');
+      lightbox.classList.remove('show');
+    }
+  </script>
 </body>
 </html>
