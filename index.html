@@ -45,41 +45,24 @@
 
     main { max-width: 600px; margin: 0 auto; padding: 20px 15px 40px 15px; text-align: center; }
     
-    .logo-container { margin: 15px auto; max-width: 260px; width: 80%; }
-    .brand-logo { width: 100%; height: auto; display: block; border-radius: 50%; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-
     .content-box { 
       background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; 
       box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--primary-purple); 
     }
-    h2 { color: var(--primary-purple); margin-top: 0; }
     
-    .bio-text { font-style: italic; font-weight: 500; color: #555; line-height: 1.6; }
-    .tagline { color: var(--logo-dark-purple); font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
-
-    .product-grid { display: grid; gap: 12px; margin: 20px 0; }
-    .product-item { 
-      background: #fdf5ff; padding: 15px; border-radius: 8px; 
-      border-left: 4px solid var(--logo-dark-purple); color: #555; text-align: left; 
-    }
-    .product-item strong { display: block; color: var(--primary-purple); margin-bottom: 3px; font-size: 1.05rem; }
+    h2 { color: var(--primary-purple); margin-top: 0; }
     
     .btn { 
       display: inline-block; margin-top: 20px; padding: 12px 30px; 
       background: var(--logo-dark-purple); color: white; text-decoration: none; 
       border-radius: 30px; font-weight: bold; transition: 0.3s; 
-      box-shadow: 0 4px 10px rgba(74, 0, 114, 0.3);
     }
-    .btn:hover { background: var(--secondary-purple); transform: scale(1.05); box-shadow: 0 4px 10px rgba(156, 39, 176, 0.3); }
 
-    /* Facebook button specifically */
-    .fb-btn { background: #1877f2; }
-    .fb-btn:hover { background: #166fe5; }
+    /* Partner Section Styling */
+    .partner-logo { width: 120px; height: 120px; border-radius: 50%; margin: 10px 0; border: 3px solid var(--light-bg); }
+    .fb-btn { background: #1877f2; margin-top: 15px; }
 
-    footer { 
-      background: #2d2d2d; color: #d1d1d1; text-align: center; 
-      padding: 20px 15px; font-size: 0.8rem; width: 100%; box-sizing: border-box;
-    }
+    footer { background: #2d2d2d; color: #d1d1d1; text-align: center; padding: 20px; font-size: 0.8rem; }
   </style>
 </head>
 <body>
@@ -94,42 +77,17 @@
   </header>
 
   <main>
-    <div class="logo-container">
-      <img src="skyslogo.jpg" alt="Sky's Craft Lab Logo" class="brand-logo">
-    </div>
-
     <div class="content-box">
       <h2>Welcome to the Lab!</h2>
-      <p class="bio-text">Handmade creations, custom designs & 3D printed products crafted with creativity and care. Made-to-order pieces for gifts, decor, accessories & more.</p>
-      <p class="tagline">✨Custom Made. Creatively Crafted.✨</p>
-      <a href="https://skyscraftlab.store" class="btn">Visit Our Main Store</a>
-      <br><a href="https://www.facebook.com/YOUR_PAGE_LINK" class="btn fb-btn">Visit Our Facebook Page</a>
+      <p>Handmade creations, custom designs & 3D printed products crafted with creativity and care.</p>
     </div>
 
     <div class="content-box">
-      <h2>What We Create</h2>
-      <div class="product-grid">
-        <div class="product-item">
-          <strong>👕 Team Apparel & Custom Jerseys</strong>
-          Personalized local league jerseys, custom workwear, and special event clothing.
-        </div>
-        <div class="product-item">
-          <strong>🐾 Custom Pet Jars & Vinyl Glassware</strong>
-          Premium, precision-cut Cricut vinyl lettering and designs on glass storage jars.
-        </div>
-        <div class="product-item">
-          <strong>💥 Character Fanware & Custom Hoodies</strong>
-          Comic book, superhero, and fan-focused custom shirts and hoodies made to order.
-        </div>
-        <div class="product-item">
-          <strong>🏷️ Custom Decals & Vinyl Stickers</strong>
-          Eye-catching lettering and unique designs for vehicles, windows, mirrors, and walls.
-        </div>
-        <div class="product-item">
-          <strong>⚙️ Custom 3D Printing & Unique Gear</strong>
-          From personalized gadgets and custom cases to one-of-a-kind prototypes, bringing digital designs to life.
-        </div>
-      </div>
+      <h2>Our Partner Business</h2>
+      <img src="skyslogo.jpg" alt="Sky's Craft Lab Logo" class="partner-logo">
+      <h3 style="color: var(--logo-dark-purple); margin: 5px 0;">Sky's Craft Lab</h3>
+      <p>Looking for high-quality custom apparel, 3D prints, or personalized vinyl craft designs? Check out our partner business!</p>
+      <a href="YOUR_FACEBOOK_PAGE_URL" class="btn fb-btn">Visit Our Facebook Page</a>
     </div>
   </main>
 
