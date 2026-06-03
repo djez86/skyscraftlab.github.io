@@ -42,7 +42,6 @@
       color: white; font-weight: bold; text-decoration: none; margin: 0 10px; 
       padding: 5px 15px; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; 
     }
-    /* Simple active styling for the current page */
     nav a.active {
       background: rgba(255, 255, 255, 0.2);
       border-color: white;
@@ -55,15 +54,15 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--primary-purple); 
     }
     h2 { color: var(--primary-purple); margin-top: 0; margin-bottom: 10px; }
+    h3 { color: var(--logo-dark-purple); margin-top: 10px; margin-bottom: 20px; font-size: 1.4rem; }
     
     .gallery-intro { font-style: italic; font-weight: 500; color: #555; margin-bottom: 25px; }
 
-    /* Responsive 2-column grid for showcase images */
     .gallery-grid { 
       display: grid; 
       grid-template-columns: repeat(2, 1fr); 
       gap: 15px; 
-      margin: 15px 0;
+      margin: 15px 0 30px 0;
     }
     
     @media (max-width: 400px) {
@@ -88,7 +87,7 @@
       height: 200px;
       object-fit: cover;
       display: block;
-      background: #eee; /* Fallback placeholder color */
+      background: #eee; 
     }
 
     .gallery-caption {
@@ -98,6 +97,13 @@
       color: var(--logo-dark-purple);
       background: white;
       border-top: 1px solid #f3e5f5;
+    }
+
+    /* Elegant divider line between sections */
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #e1bee7, transparent);
+      margin: 35px 0 25px 0;
     }
 
     footer { 
@@ -122,41 +128,45 @@
       <h2>Our Creations</h2>
       <p class="gallery-intro">A look inside the lab at some of our favorite custom projects and completed orders.</p>
       
+      <h3>👕 Custom Clothing & Sportswear</h3>
       <div class="gallery-grid">
-        <!-- Item 1: Team Jerseys -->
         <div class="gallery-item">
           <img src="images/dart-jerseys.jpg" alt="Custom Dart League Jerseys" class="gallery-img">
           <div class="gallery-caption">Custom Dart League Jerseys</div>
         </div>
+        <div class="gallery-item">
+          <img src="images/spiderman-apparel.jpg" alt="Spider-Man Custom Apparel" class="gallery-img">
+          <div class="gallery-caption">Character Fanware & Hoodies</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/paramedic-apparel.jpg" alt="Custom Paramedic Apparel" class="gallery-img">
+          <div class="gallery-caption">Custom Workwear & Jerseys</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/custom-shirts.jpg" alt="Custom Printed T-Shirts" class="gallery-img">
+          <div class="gallery-caption">Special Event Team Gear</div>
+        </div>
+      </div>
 
-        <!-- Item 2: Pet Jars -->
+      <div class="section-divider"></div>
+
+      <h3>✨ More Lab Creations</h3>
+      <div class="gallery-grid">
         <div class="gallery-item">
           <img src="images/pet-jars.jpg" alt="Custom Pet Treat Jars" class="gallery-img">
           <div class="gallery-caption">Personalized Pet Jars</div>
         </div>
-
-        <!-- Item 3: Character Hoodies -->
-        <div class="gallery-item">
-          <img src="images/spiderman-apparel.jpg" alt="Spider-Man Custom Apparel" class="gallery-img">
-          <div class="gallery-caption">Character Fanware</div>
-        </div>
-
-        <!-- Item 4: Custom Decals -->
         <div class="gallery-item">
           <img src="images/car-decals.jpg" alt="Vinyl Car Decals" class="gallery-img">
           <div class="gallery-caption">Vinyl Decals & Stickers</div>
         </div>
-
-        <!-- Item 5: 3D Printing -->
         <div class="gallery-item">
           <img src="images/3d-print.jpg" alt="Custom 3D Printing Project" class="gallery-img">
           <div class="gallery-caption">Custom 3D Printed Gear</div>
         </div>
-
-        <!-- Item 6: Workwear/Special Events -->
         <div class="gallery-item">
-          <img src="images/paramedic-apparel.jpg" alt="Custom Paramedic Apparel" class="gallery-img">
-          <div class="gallery-caption">Custom Workwear</div>
+          <img src="images/accessories.jpg" alt="Custom Personalized Accessories" class="gallery-img">
+          <div class="gallery-caption">Custom Keepsakes</div>
         </div>
       </div>
     </div>
