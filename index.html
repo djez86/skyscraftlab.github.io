@@ -15,25 +15,19 @@
     }
     body { 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      margin: 0; padding: 0; background-color: var(--light-bg); color: #333; 
-    }
-
-    /* Improved visibility for silver stars */
-    body::before {
-      content: "✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧";
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      color: #9c27b0; /* Changed to purple for better contrast */
-      opacity: 0.2; z-index: -1; font-size: 1.5rem;
-      letter-spacing: 15px; line-height: 3; pointer-events: none;
+      margin: 0; padding: 0; background-color: var(--light-bg); color: #333;
+      /* Background star pattern */
+      background-image: url('images/star.png'); 
+      background-size: 50px 50px;
     }
     
-    /* Added more padding to header to raise title */
-    header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); text-align: center; padding: 35px 0 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    header { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); text-align: center; padding: 25px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
     
+    /* Fixed title: "Skys Craft Lab" (apostrophe tucked in) */
     header h1 { 
       margin: 0 0 15px 0; font-size: 3rem; font-family: 'Dancing Script', cursive;
       background: var(--silver-metallic); -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
+      -webkit-text-fill-color: transparent; letter-spacing: -2px;
     }
     
     nav a { 
@@ -61,7 +55,7 @@
 <body>
 
   <header>
-    <h1>Sky's Craft Lab</h1>
+    <h1>Sky'sCraft Lab</h1> <!-- Apostrophe adjusted here -->
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
